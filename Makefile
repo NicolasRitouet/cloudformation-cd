@@ -13,7 +13,7 @@ changeset: validate
 	aws cloudformation create-change-set --stack-name $(STACK) --template-body file://`pwd`/$(STACK).yml --parameters file://`pwd`/.env --capabilities CAPABILITY_IAM --profile $(AWS_PROFILE) --region $(AWS_REGION)
 
 describe-changeset:
-  aws describe-change-set --change-set-name $(CHANGESET-NAME)
+	aws describe-change-set --change-set-name $(CHANGESET-NAME)
 
 events:
 	aws cloudformation describe-stack-events --stack-name $(STACK) --profile $(AWS_PROFILE) --region $(AWS_REGION)
@@ -31,3 +31,6 @@ delete:
 validate:
 	@which aws || pip install awscli
 	aws cloudformation validate-template --template-body file://`pwd`/$(STACK).json
+
+test-syntax:
+	make --just-print

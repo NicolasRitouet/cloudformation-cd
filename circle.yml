@@ -1,0 +1,7 @@
+dependencies:
+  override:
+    - sudo pip install awscli
+    
+test:
+  override:
+    - make test-syntax

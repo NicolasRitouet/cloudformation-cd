@@ -1,5 +1,8 @@
 # Infrastructure as code - Continuous Delivery of Cloudformation stacks
 
+[![CircleCI](https://circleci.com/gh/NicolasRitouet/cloudformation-cd.svg?style=svg)](https://circleci.com/gh/NicolasRitouet/cloudformation-cd)
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 > Continuous Delivery of Cloudformation stacks using CodePipeline and Change-sets
 
 ## Getting started
@@ -48,3 +51,12 @@ make changeset STACK=cloudformation-cd
 
 ```bash
 make describe-changeset CHANGESET-NAME=name-of-changeset
+```
+
+
+### Test syntax of makefile
+
+```bash
+make test-syntax
+```
+
