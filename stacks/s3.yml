@@ -1,0 +1,22 @@
+---
+AWSTemplateFormatVersion: '2010-09-09'
+Description: very simple test cloudformation stack (creates only a s3 bucket)
+Resources:
+  S3BucketForWebsiteContent:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: index.html
+  S3BucketForlogs:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: private
+
+Outputs:
+  BucketName:
+    Value: !Ref S3BucketForWebsiteContent
+    Description: Name of S3 bucket for website
+  LogsBucketName:
+    Value: !Ref S3BucketForlogs
+    Description: Name of S3 bucket to store logs

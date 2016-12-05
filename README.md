@@ -1,9 +1,14 @@
 # Infrastructure as code - Continuous Delivery of Cloudformation stacks
 
-[![CircleCI](https://circleci.com/gh/NicolasRitouet/cloudformation-cd.svg?style=svg)](https://circleci.com/gh/NicolasRitouet/cloudformation-cd)
+[![CircleCI](https://img.shields.io/circleci/project/github/NicolasRitouet/cloudformation-cd.svg)]()
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 > Continuous Delivery of Cloudformation stacks using CodePipeline and Change-sets
+
+## Description
+
+This is a complete setup to enable continuous delivery of an infrastructure using Github PR for manual verification of a change-set.
+
 
 ## Getting started
 
@@ -60,3 +65,8 @@ make describe-changeset CHANGESET-NAME=name-of-changeset
 make test-syntax
 ```
 
+### Todo
+
+- loop over all stacks
+- create the PR message (title as first line and rest as message based on change-set output)
+- verify if a PR is already created and append changes if necessary

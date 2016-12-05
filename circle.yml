@@ -1,7 +1,20 @@
 dependencies:
   override:
-    - sudo pip install awscli
+    - pip install awscli
+    - curl https://hub.github.com/standalone -Lo /usr/bin/hub && chmod 755 /usr/bin/hub
     
 test:
   override:
     - make test-syntax
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - make create-changeset STACK=s3
+      - make pr
+
+  production:
+    branch: production
+    commands:
+      - make update STACK=s3
